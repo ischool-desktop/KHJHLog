@@ -115,7 +115,7 @@ namespace KHJHLog
                 strBuilder.AppendLine(string.Format("{0}「{1}」", Action, elmContent.ElementText("ClassName")));
                 strBuilder.AppendLine(string.Format("年級「{0}」", elmContent.ElementText("GradeYear")));
                 strBuilder.AppendLine(string.Format("備註「{0}」", elmContent.ElementText("Comment")));
-                
+
                 // 顯示第二、三優先順位班級
                 if (elmContent.Element("SecondPriorityClassName") != null)
                 {
@@ -197,6 +197,14 @@ namespace KHJHLog
                 strBuilder.AppendLine(string.Format("狀態變更前「{0}」", elmContent.ElementText("StudentStatus")));
                 strBuilder.AppendLine(string.Format("狀態變更後「{0}」", elmContent.ElementText("NewStudentStatus")));
                 strBuilder.AppendLine(string.Format("備註「{0}」", elmContent.ElementText("Reason")));
+
+                return strBuilder.ToString();
+            }
+            else if (Action.Equals("調整班級導師"))
+            {
+                strBuilder.AppendLine(string.Format("班級「{0}」班導師從「{1}」調整為「{2}」", elmContent.ElementText("ClassName"), elmContent.ElementText("OldTeacherName"), elmContent.ElementText("NewTeacherName")));                
+                strBuilder.AppendLine(string.Format("備註「{0}」", elmContent.ElementText("Reason")));                
+                strBuilder.AppendLine(string.Format("相關證明文件網址「{0}」", elmContent.ElementText("EDoc")));
 
                 return strBuilder.ToString();
             }

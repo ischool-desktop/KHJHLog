@@ -12,6 +12,8 @@ namespace KHJHLog
 {
     public partial class frmActionList : FISCA.Presentation.Controls.BaseForm
     {
+        // 2018/11/30 穎驊註記，這邊程式碼很怪，其實根本不給新增，不確定當初設計者思維，新增資料先使用 Insert Table 處理
+
         private List<Action> Actions = null;
 
         public frmActionList()
